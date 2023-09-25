@@ -19,7 +19,7 @@ sed -i "s|DISTRIB_REVISION='.*'|DISTRIB_REVISION='R$(date +%Y.%m.%d)'|g" package
 echo "DISTRIB_SOURCECODE='lede'" >>package/base-files/files/etc/openwrt_release
 
 # Modify default IP（FROM 192.168.1.1 CHANGE TO 192.168.31.4）
-# sed -i 's/192.168.1.1/192.168.31.4/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 # Replace the default software source
 # sed -i 's#openwrt.proxy.ustclug.org#mirrors.bfsu.edu.cn\\/openwrt#' package/lean/default-settings/files/zzz-default-settings
@@ -41,6 +41,8 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/
 
 # Add third-party software packages (The entire repository)
 # git clone https://github.com/libremesh/lime-packages.git package/lime-packages
+git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
+git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 # Add third-party software packages (Specify the package)
 # svn co https://github.com/libremesh/lime-packages/trunk/packages/{shared-state-pirania,pirania-app,pirania} package/lime-packages/packages
 # Add to compile options (Add related dependencies according to the requirements of the third-party software package Makefile)
