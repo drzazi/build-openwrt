@@ -18,7 +18,12 @@ on:
           - openwrt-main
           - lede-master
           - immortalwrt-master
-          - Lienol-master
+          - Lienol-master  
+  watch:
+   types: started
+  schedule:
+    - cron: 0 13 * * 6
+          
       
 env:
   FEEDS_CONF: config/${{ inputs.source_branch }}/feeds.conf.default
