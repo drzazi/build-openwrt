@@ -43,6 +43,8 @@ sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 # git clone https://github.com/libremesh/lime-packages.git package/lime-packages
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # Add third-party software packages (Specify the package)
 # svn co https://github.com/libremesh/lime-packages/trunk/packages/{shared-state-pirania,pirania-app,pirania} package/lime-packages/packages
 # Add to compile options (Add related dependencies according to the requirements of the third-party software package Makefile)
